@@ -1,0 +1,65 @@
+class Solution {
+public:
+    string intToRoman(int num) {
+        string output;
+        while(num >= 1000){
+            output.push_back('M');
+            num-=1000;
+        }
+        if(num>=900){
+            output.push_back('C');
+            output.push_back('M');
+            num-=900;
+        }
+        if(num>=500){
+            output.push_back('D');
+            num-=500;
+        }
+        if(num>=400){
+            output.push_back('C');
+            output.push_back('D');
+            num-=400;
+        }
+        while(num>=100){
+            output.push_back('C');
+            num-=100;
+        }
+        if(num>=90){
+            output.push_back('X');
+            output.push_back('C');
+            num-=90;
+        }
+        if(num>=50){
+            output.push_back('L');
+            num-=50;
+        }
+        if(num>=40){
+            output.push_back('X');
+            output.push_back('L');
+            num-=40;
+        }
+        while(num>=10){
+            output.push_back('X');
+            num-=10;
+        }
+        if(num>=9){
+            output.push_back('I');
+            output.push_back('X');
+            num-=9;
+        }
+        if(num>=5){
+            output.push_back('V');
+            num-=5;
+        }
+        if(num>=4){
+            output.push_back('I');
+            output.push_back('V');
+            num-=4;
+        }
+        while(num>0){
+            output.push_back('I');
+            num--;
+        }
+        return output;
+    }
+};
