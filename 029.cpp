@@ -14,7 +14,7 @@ public:
             divisor = abs(divisor);
             sign = !sign;
         }
-        long int did = labs(dividend), dir = labs(divisor);
+        unsigned int did = abs(dividend), dir = abs(divisor);
         int mul = 1;
         int output = 0;
         bool hit_max = true;
